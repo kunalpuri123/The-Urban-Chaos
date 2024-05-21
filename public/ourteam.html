@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Meet Our Founders | The Urban Chaos</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/logoo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./aboutus.css">
+    <link rel="stylesheet" href="./preloader.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    <style>
+        /* Add the fish animation CSS here */
+        @keyframes myfirst {
+          0% {margin-left: -235px;}
+          100% {margin-left: 100%;}
+        }
+        
+        .fish {
+          background-image: url('http://www.geertjanhendriks.nl/codepen/form/fish.png');
+          width: 235px;
+          height: 104px;
+          margin-left: -235px;
+          position: absolute;
+          animation: myfirst 24s linear infinite;
+          top: 40%; /* Adjust the top position to place the fish where desired */
+          z-index: -1; /* Set z-index to move fish behind other content */
+        }
+        
+        body {
+          position: relative; /* Added to position the fish */
+          font-family: Arial, sans-serif; /* Use a fallback font */
+          line-height: 1.6;
+          margin: 0;
+          padding: 0;
+        }
+
+        .icons li {
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .icons li i {
+            font-size: 36px;
+            color: #C850C0;
+            background-color: white;
+            padding: 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .icons li span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+            color: #fff;
+            background-color: #C850C0;
+            padding: 4px 8px;
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .icons li:hover i {
+            background-color: #fff;
+        }
+
+        .icons li:hover span {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Preloader styles */
+        #preloader {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #FFF;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          z-index: 9999;
+        }
+
+        #logo {
+          width: 80px;
+        }
+
+        p {
+          margin-top: 10px;
+          font-size: 18px;
+        }
+
+        /* Additional styles for the founder images */
+        .image {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .founder-image {
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .founder-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            transition: filter 0.3s; /* Transition for the blur effect */
+        }
+
+        .founder-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(200, 80, 192, 0.8); /* Semi-transparent background */
+            padding: 4px 8px;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .founder-image:hover img {
+            filter: blur(5px); /* Apply the blur effect on hover */
+        }
+
+        .founder-image:hover .founder-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive styles */
+        .image {
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 20px; /* Add a gap between the images */
+      }
+
+      .founder-image {
+          position: relative; /* Add position relative to the founder image container */
+          margin-bottom: 10px; /* Add margin to separate images in mobile view */
+      }
+
+      .founder-image img {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          transition: filter 0.3s; /* Transition for the blur effect */
+      }
+
+      .founder-text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: rgba(200, 80, 192, 0.8); /* Semi-transparent background */
+          padding: 4px 8px;
+          border-radius: 8px;
+          color: #fff;
+          font-size: 14px;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s, visibility 0.3s;
+      }
+
+      .founder-image:hover img {
+          filter: blur(5px); /* Apply the blur effect on hover */
+      }
+
+      .founder-image:hover .founder-text {
+          opacity: 1;
+          visibility: visible;
+      }
+
+      /* Responsive styles */
+      @media screen and (max-width: 768px) {
+          .image {
+              flex-direction: column;
+              gap: 10px; /* Add smaller gap between elements */
+          }
+
+          .founder-image img {
+              width: 120px; /* Reduce image size on mobile view */
+              height: 120px;
+          }
+
+          .content {
+              order: -1; /* Move the content section above the images in mobile view */
+          }
+
+          .founder-text {
+              font-size: 12px; /* Reduce text size on mobile view */
+          }
+      }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <img src="./images/favicon-32x32.png" alt="Logo" id="logo" />
+        <p>Loading...</p>
+    </div>
+    <marquee behavior="scroll" direction="left">The Urban Chaos is Launching soon in your verse! Stay tuned! Unlock Fashion Delights - Subscribe now for your exclusive ₹100 OFF coupon on your maiden shopping extravaganza with us!</marquee>
+    <div class="fish"></div>
+    <section>
+        <!-- Content of the section -->
+        <div class="image">
+            <div class="founder-image">
+                <img src="./images/KUNAL.jpg" alt="Kunal Puri">
+                <div class="founder-text">Kunal Puri</div>
+            </div>
+            <div class="founder-image">
+                <img src="./images/VIVEK.jpg" alt="Vivek Hande">
+                <div class="founder-text">Vivek Hande</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Meet Our Founders</h2>
+            <span><!-- line here --></span>
+            <p>Welcome to The Urban Chaos! Our fashion brand was founded by two visionary individuals - <strong>Kunal Puri</strong> and <strong>Vivek Hande</strong>. With their passion for style and dedication to creating a mark in the fashion industry, they have brought The Urban Chaos to life. Get ready to explore a world of premium and luxury clothing curated by our brilliant founders.</p>
+            <p>Navigate to their LinkedIn profiles to learn more about their journey:</p>
+            <ul class="icons">
+                <li>
+                    <a href="https://www.linkedin.com/in/kunal-puri-851760241" target="_blank" rel="noopener noreferrer">
+                        <i class="fa fa-linkedin"></i>
+                        <span class="founder-text">Kunal Puri</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/vivek-hande" target="_blank" rel="noopener noreferrer">
+                        <i class="fa fa-linkedin"></i>
+                        <span class="founder-text">Vivek Hande</span>
+                    </a>
+                    
+                </li>
+            </ul>
+        </div>
+    </section>
+    <br><br>
+   
+    <footer>
+        <div class="footerContainer">
+          <div class="socialicons">
+            <a href="https://www.facebook.com/people/The-Urban-Chaos/100095264650509/?is_tour_completed=true"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/the.urbanchaos/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/theurbanchaos/"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://youtube.com/@the.urbanchaos"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+          <div class="footerNav">
+            <ul>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./aboutus.html">About</a></li>
+              <li><a href="./contactus.html">Contact us</a></li>
+              <li><a href="./ourteam.html">Our Team</a></li>
+  
+            </ul>
+  
+          
+          
+          </div>
+        </div>
+        <div class="footerBottom">
+          <p>Copyright &copy;2023 The Urban Chaos| All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to hide preloader after the page has loaded
+        window.addEventListener('load', function() {
+            var preloader = document.getElementById('preloader');
+            preloader.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

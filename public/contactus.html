@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | The Urban Chaos</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/logoo.png">
+    <link rel="stylesheet" href="./contactus.css" />
+    <link href="https://fonts.googleapis.com/css?family=Sniglet|Raleway:900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./preloader.css" />
+    <style>
+      /* ... (existing CSS styles) ... */
+
+      /* Additional CSS for the new pop-up */
+      #successPopupContainer {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(255, 192, 203, 0.8); /* Baby Pink background */
+          z-index: 999;
+      }
+
+      #successPopup {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          max-width: 80%;
+          text-align: center;
+          animation: fadeIn 0.5s ease-in-out;
+      }
+
+      #successPopup p {
+          text-align: center;
+          font-size: 40px;
+          color: #ff1493; /* Pink text color */
+          margin-top: 20px;
+          font-family: 'Arial', sans-serif; /* Custom font family */
+          font-weight: bold;
+          text-transform: uppercase;
+      }
+  </style>
+</head>
+<body>
+  <div id="preloader">
+    <img src="./images/favicon-32x32.png" alt="Logo" id="logo" />
+    <p>Loading...</p>
+  </div>
+  <marquee behavior="scroll" direction="left">The Urban Chaos is Launching soon in your verse! Stay tuned ! Unlock Fashion Delights - Subscribe now for your exclusive ₹100 OFF coupon on your maiden shopping extravaganza with us!</marquee>
+
+  <header>
+		<h1>Contact us</h1>
+	</header>
+
+	<div id="form">
+		<div class="fish" id="fish"></div>
+		<div class="fish" id="fish2"></div>
+    
+
+		<form id="waterform" method="post" >
+			<div class="formgroup" id="name-form">
+				<label for="name">Your name*</label>
+				<input type="text" id="name" name="name" />
+			</div>
+
+			<div class="formgroup" id="email-form">
+				<label for="email">Your e-mail*</label>
+				<input type="email" id="email" name="email" />
+			</div>
+
+			<div class="formgroup" id="message-form">
+				<label for="message">Your message</label>
+				<textarea id="message" name="message"></textarea>
+			</div>
+
+			<input type="submit" value="Send your message!" />
+		</form>
+    <div id="successPopupContainer">
+      <div id="successPopup">
+          <p>We will reach out to you shortly!</p>
+      </div>
+  </div>
+
+  <script>
+      // Function to show the success pop-up after the form is submitted
+      function showSuccessPopup() {
+          var successPopupContainer = document.getElementById('successPopupContainer');
+          successPopupContainer.style.display = 'flex';
+
+          // Automatically close the pop-up after 5 seconds (5000 milliseconds)
+          setTimeout(function() {
+              hideSuccessPopup();
+          }, 2000);
+      }
+
+      // Function to hide the success pop-up
+      function hideSuccessPopup() {
+          var successPopupContainer = document.getElementById('successPopupContainer');
+          successPopupContainer.style.display = 'none';
+      }
+
+      // Function to submit form data to Google Sheets
+      function submitFormDataToGoogleSheets(formData) {
+          // Replace "YOUR_GOOGLE_SCRIPT_URL" with the URL of your Google Apps Script that handles form submissions
+          var googleScriptURL = "https://script.google.com/macros/s/AKfycbwYny1ZGKeoaNojWa82HwYDkQ0oI0CyL2h6742IMBAXrdslYxWOrz5KzePiqdh8lYGfNA/exec";
+
+          // Make an HTTP POST request to the Google Apps Script URL
+          fetch(googleScriptURL, {
+              method: 'POST',
+              mode: 'no-cors', // CORS is not required for simple form submission
+              body: formData
+          })
+          .then(function(response) {
+              // Success, form data submitted
+              console.log('Form data submitted successfully!');
+              showSuccessPopup(); // Show the success pop-up after form submission
+          })
+          .catch(function(error) {
+              // Error occurred while submitting form data
+              console.error('Error submitting form data:', error);
+          });
+      }
+
+      // Function to handle form submission
+      function handleFormSubmit(event) {
+          event.preventDefault(); // Prevent default form submission behavior
+
+          // Get the form data
+          var formElement = document.getElementById('waterform');
+          var formData = new FormData(formElement);
+
+          // Submit form data to Google Sheets
+          submitFormDataToGoogleSheets(formData);
+      }
+
+      // Add event listener to the form for form submission
+      var form = document.getElementById('waterform');
+      form.addEventListener('submit', handleFormSubmit);
+  </script>
+
+		<div class="contact-instruction">
+			<p>You can also contact us at <a href="mailto:contact@theurbanchaos.com">contact@theurbanchaos.com</a></p>
+			<!-- Gmail icon link -->
+			<a href="mailto:contact@theurbanchaos.com">
+				<i class="fas fa-envelope-open gmail-icon"></i>
+			</a>
+		</div>
+    <div class="footerBottom">
+      <p>Copyright &copy;2023 The Urban Chaos| All Rights Reserved</p>
+    </div>
+    
+    
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./contactus.js"></script>
+
+  <script>
+    // Hide the preloader after all resources have loaded
+    window.addEventListener('load', function() {
+      var preloader = document.getElementById('preloader');
+      preloader.style.display = 'none';
+    });
+  </script>
+
+  <footer>
+    <!-- Footer content goes here if you have any -->
+  </footer>
+
+</body>
+</html>

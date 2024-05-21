@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About Us | The Urban Chaos</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/logoo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./aboutus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./preloader1.css" />
+    <style>
+        /* Add the fish animation CSS here */
+        @-webkit-keyframes myfirst {
+          0% {margin-left: -235px;}
+          100% {margin-left: 100%;}
+        }
+        
+        @keyframes myfirst {
+          0% {margin-left: -235px;}
+          100% {margin-left: 100%;}
+        }
+        
+        .fish {
+          background-image: url('http://www.geertjanhendriks.nl/codepen/form/fish.png');
+          width: 235px;
+          height: 104px;
+          margin-left: -235px;
+          position: absolute;
+          animation: myfirst 24s linear infinite;
+          top: 40%; /* Adjust the top position to place the fish where desired */
+          z-index: -1; /* Set z-index to move fish behind other content */
+        }
+        
+        body {
+          position: relative; /* Added to position the fish */
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <img src="./favicon-32x32.png" alt="Logo" id="logo" />
+        <p>Loading...</p>
+      </div>
+    <marquee behavior="scroll" direction="left">The Urban Chaos is Launching soon in your verse! Stay tuned ! Unlock Fashion Delights - Subscribe now for your exclusive ₹100 OFF coupon on your maiden shopping extravaganza with us!</marquee>
+   
+    <div class="fish"></div>
+    <section>
+        <div class="image">
+           <img src="https://cdn.pixabay.com/photo/2017/08/26/23/37/business-2684758__340.png">
+        </div>
+
+        <div class="content">
+            <h2>About The Urban Chaos</h2>
+            <span><!-- line here --></span>
+            <p>Hello Urbanites!!! The Urban Chaos is a premium and luxury fashion brand that is soon going to launch an exquisite collection of clothes. Experience the world of high-end fashion and style with us. We are committed to providing you with the finest and most fashionable clothing options for every occasion.</p>
+            <ul class="links">
+                <li><a href="#">Subscribe</a></li>
+                <div class="vertical-line"></div>
+                <li><a href="#">Stay Tuned</a></li>
+                <div class="vertical-line"></div>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </section><br><br>
+    
+    <footer>
+        <div class="footerContainer">
+          <div class="socialicons">
+            <a href="https://www.facebook.com/people/The-Urban-Chaos/100095264650509/?is_tour_completed=true"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/the.urbanchaos/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/theurbanchaos/"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://youtube.com/@the.urbanchaos"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+          <div class="footerNav">
+            <ul>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./aboutus.html">About</a></li>
+              <li><a href="./contactus.html">Contact us</a></li>
+              <li><a href="./ourteam.html">Our Team</a></li>
+  
+            </ul>
+  
+          
+          
+          </div>
+        </div>
+        <div class="footerBottom">
+          <p>Copyright &copy;2023 The Urban Chaos| All Rights Reserved</p>
+        </div>
+        <script>
+            window.addEventListener('load', function() {
+              // Hide the preloader once all content, including images, has loaded
+              var preloader = document.getElementById('preloader');
+              preloader.style.display = 'none';
+            });
+          </script>
+      </footer>
+    
+</body>
+</html>

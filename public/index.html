@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/logoo.png">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./preloader.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>THE URBAN CHAOS</title>
+  <style>
+    /* ... (existing CSS styles) ... */
+
+    /* Style for the "Thank you" text */
+    .thank-you-text {
+      display: none;
+      text-align: center;
+      font-size: 24px;
+      color: #ff1493; /* Pink text color */
+      margin-top: 20px;
+      font-family: 'Arial', sans-serif; /* Custom font family */
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div id="preloader">
+    <img src="./images/favicon-32x32.png" alt="Logo" id="logo" />
+    <p>Loading...</p>
+  </div>
+
+  <marquee behavior="scroll" direction="left">The Urban Chaos is Launching soon in your verse! Stay tuned! Unlock Fashion Delights - Subscribe now for your exclusive ₹100 OFF coupon on your maiden shopping extravaganza with us!</marquee>
+
+  <header>
+    <div class="logo">
+      <img src="./images/logoo.png" alt="the_urban_chaos_logo">
+    </div>
+  </header>
+
+  <section class="container">
+    <div class="left">
+      <h1>Get Ready for Fashion Nirvana:<br><span>The Urban Chaos<br>Coming Soon!!</span></h1>
+      <p>Hello Urbanites!!!
+        Subscribe with your email to unlock the world of 
+        The Urban Chaos - Your Ultimate Fashion Destination! 
+        Be the first to receive exciting announcements and
+        enjoy an exclusive ₹100 OFF coupon for your inaugural shopping spree with us! 💓
+        Join now and elevate your style game with The Urban Chaos! 🚀
+      </p>
+      <form id="sheetdb-form" method="post">
+        <label for="Email">Email Address</label>
+        <input name='Email' id="Email" type="email" placeholder="Email Address" required>
+        <img src="./images/icon-error.svg" class="error-icon" alt="">
+        <button type="submit"><img src="./images/icon-arrow.svg" alt="arrow"></button>
+        <p class="error-text">Please provide a valid email</p>
+        <p class="thank-you-text" id="thankYouText">Thank you for subscribing Urbanites!!!!</p> <!-- Initially hidden -->
+      </form>
+      
+      
+      <p class="thank-you-text" id="thankYouText">Thank you for subscribing Urbanites!!!!</p>
+    </div>
+    <div class="right"></div>
+  </section>
+  <script>
+    document.getElementById("sheetdb-form").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the form from submitting traditionally
+  
+      var formData = new FormData(event.target); // Get form data
+      var url = "https://script.google.com/macros/s/AKfycbwoEp-a4OmnkUVF-nmUVoClZ88fe6k22cCXs2gpxc-zaOjXiPlWDod3ePw9BdOoKJyh/exec"; // Replace with the URL of your deployed Google Apps Script
+  
+      fetch(url, {
+        method: "POST",
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          // On successful submission, remove the form and show the "Thank you" text
+          document.getElementById("sheetdb-form").style.display = "none";
+          document.getElementById("thankYouText").style.display = "block";
+          showPopup();
+  
+          // Hide the "Thank you" text after showing the pop-up
+          setTimeout(function () {
+            document.getElementById("thankYouText").style.display = "none";
+          }, 5000); // Adjust the duration (in milliseconds) to control how long the "Thank you" text remains visible
+        } else {
+          // Handle error if needed
+          console.error("Form submission failed.");
+        }
+      })
+      .catch(error => {
+        // Handle error if needed
+        console.error("Error occurred during form submission:", error);
+      });
+    });
+  
+    // Function to show the pop-up
+    function showPopup() {
+      var popupContainer = document.getElementById('popupContainer');
+      popupContainer.style.display = 'flex';
+    }
+  
+    // Close the pop-up when the close button is clicked
+    document.getElementById('closeButton').addEventListener('click', function() {
+      var popupContainer = document.getElementById('popupContainer');
+      popupContainer.style.display = 'none';
+    });
+  </script>
+  
+    
+    
+    
+    <!-- Modal Pop-up -->
+    <div id="popupContainer">
+      <div id="popupContent">
+        <p>Thank you for subscribing Urbanites!!!!</p>
+        <button id="closeButton">Close</button>
+      </div>
+    </div>
+    
+    
+  
+
+
+  <footer>
+    <div class="footerContainer">
+      <div class="socialicons">
+        <a href="https://www.facebook.com/people/The-Urban-Chaos/100095264650509/?is_tour_completed=true"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/the.urbanchaos/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/theurbanchaos/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://youtube.com/@the.urbanchaos"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="footerNav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./aboutus.html">About</a></li>
+          <li><a href="./contactus.html">Contact us</a></li>
+          <li><a href="./ourteam.html">Our Team</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footerBottom">
+      <p>Copyright &copy;2023 The Urban Chaos | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    // Function to show the pop-up when the page loads
+    function showPopup() {
+      var popupContainer = document.getElementById('popupContainer');
+      popupContainer.style.display = 'flex';
+    }
+
+    // Close the pop-up
+    function closePopup() {
+      var popupContainer = document.getElementById('popupContainer');
+      popupContainer.style.display = 'none';
+    }
+
+    // Show the pop-up after the page loads
+    window.addEventListener('load', function() {
+      var preloader = document.getElementById('preloader');
+      preloader.style.display = 'none';
+       // Call the function to show the pop-up here
+    });
+
+    // Close the pop-up when the close button is clicked
+    document.getElementById('closeButton').addEventListener('click', closePopup);
+
+    // Function to show the "Thank you" text and hide the form
+    function showThankYou() {
+      var form = document.querySelector('.left form');
+      var thankYouText = document.getElementById('thankYouText');
+      form.style.display = 'none';
+      thankYouText.style.display = 'block';
+      return false; // Prevent form submission (you can remove this if needed)
+    }
+  </script>
+</body>
+</html>

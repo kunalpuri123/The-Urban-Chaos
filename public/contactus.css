@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css?family=Sniglet|Raleway:900');
+
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Sniglet', cursive;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 4em;
+  font-family: 'Raleway', sans-serif;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 90%;
+  color: #F90;
+  text-align: center;
+}
+
+/* Animation webkit */
+@-webkit-keyframes myfirst {
+  0% {margin-left: -235px;}
+  100% {margin-left: 100%;}
+}
+
+/* Animation */
+@keyframes myfirst {
+  0% {margin-left: -235px;}
+  100% {margin-left: 100%;}
+}
+
+.fish {
+  background-image: url('http://www.geertjanhendriks.nl/codepen/form/fish.png');
+  width: 235px;
+  height: 104px;
+  margin-left: -235px;
+  position: absolute;
+  animation: myfirst 24s linear infinite;
+}
+
+#fish {
+  top: 10%;
+}
+
+#fish2 {
+  top: 30%;
+  animation-delay: 12s;
+}
+
+header {
+  height: 160px;
+  background: url('http://www.geertjanhendriks.nl/codepen/form/golf.png') repeat-x bottom;
+}
+
+#form {
+  height: auto;
+  background-color: #98d4f3;
+  overflow: hidden;
+  position: relative;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 40px 20px;
+  color: white;
+  position: relative;
+}
+
+label, input, textarea {
+  display: block;
+}
+
+input, textarea {
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  padding: 10px;
+  font-family: 'Sniglet', cursive;
+  font-size: 1em;
+  color: #676767;
+  transition: border 0.5s;
+}
+
+input:focus, textarea:focus {
+  border: solid 3px #77bde0;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+  overflow: auto;
+}
+
+input[type="submit"] {
+  background-color: #F90;
+  color: white;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-size: 1.29em;
+  font-family: 'Sniglet', cursive;
+  transition: background-color 0.5s;
+}
+
+input[type="submit"]:hover {
+  background-color: #e58f0e;
+}
+
+label {
+  font-size: 1.5em;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.formgroup, .formgroup-active, .formgroup-error {
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 10.5%;
+  transition: background-image 0.7s;
+  width: 100%;
+  padding-top: 2px;
+}
+
+.formgroup {
+  background-image: url('http://www.geertjanhendriks.nl/codepen/form/pixel.gif');
+}
+
+.formgroup-active {
+  background-image: url('http://www.geertjanhendriks.nl/codepen/form/octo.png');
+}
+
+.formgroup-error {
+  background-image: url('http://www.geertjanhendriks.nl/codepen/form/octo-error.png');
+  color: red;
+}
+
+.contact-instruction {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.gmail-icon {
+  display: inline-block;
+  font-size: 48px; /* Increased the icon size */
+  margin-left: 10px; /* Added some space between icon and text */
+  vertical-align: middle;
+  color: #F90; /* Changed icon color to match your theme */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 3em;
+  }
+  .fish {
+    width: 117px;
+    height: 52px;
+    margin-left: -117px;
+  }
+  #fish {
+    top: 5%;
+  }
+  #fish2 {
+    top: 15%;
+    animation-delay: 6s;
+  }
+  form {
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px 10px;
+  }
+  .formgroup,
+  .formgroup-active,
+  .formgroup-error {
+    width: 100%;
+  }
+  .gmail-icon {
+    font-size: 36px; /* Adjusted icon size for smaller screens */
+  }
+}
+/* Preloader styles */
+/* Preloader styles */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF; /* Set the background color of the preloader */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Set a high z-index to ensure it's on top of other elements */
+}
+
+#logo {
+  width: 80px; /* Adjust the size of the logo */
+}
+
+p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.footerContainer{
+  background-color: #111;
+   width:100%;
+   padding: 70px 30px 20px;
+ }
+ .socialicons{
+   display: flex;
+   justify-content: center;
+ }
+ .socialicons a{
+   text-decoration: none;
+   padding: 10px;
+   background-color: white;
+   margin: 10px;
+   border-radius: 50%;
+ }
+ 
+ .socialicons a i{
+   font-size: 2em;
+   color: black;
+   opacity: 0.9;
+ }
+ 
+ .socialicons a:hover{
+   background-color: #111;
+   transition: 0.5s;
+ 
+ }
+ 
+ .socialicons a:hover i{
+   color: white;
+   transition: 0.5s;
+ }
+ 
+ .footerNav{
+   margin: 30px 0;
+ 
+ }
+ .footerNav ul{
+   display: flex;
+   justify-content: center;
+ }
+ .footerNav ul li a{
+   color:white;
+   margin: 20px;
+   text-decoration: none;
+   font-size: 1.3em;
+   opacity: 0.7;
+   transition: 0.5s;
+ 
+ }
+ .footerNav ul li a:hover{
+   opacity: 1;
+ }
+ .footerBottom{
+   background-color: #111;
+   padding: 20px;
+   text-align: center;
+ 
+ }
+ .footerBottom p{
+   color: white;
+ }
+ .copyright {
+  /* Add any container styles here */
+  width: 80%; /* Set the width of the container, adjust as needed */
+  margin: 0 auto; /* This centers the container itself */
+}
+
+.copyright p {
+  /* Add any paragraph styles here */
+  text-align: center; /* This centers the text inside the paragraph */
+}
+marquee {
+  background-color: yellow; /* Add yellow background color */
+  padding: 10px; /* Add some padding to the marquee */
+  font-size: 18px; /* Adjust font size if needed */
+  font-weight: bold; /* Add font weight if desired */
+  color: #333; /* Change text color if needed */
+}
